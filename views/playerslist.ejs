@@ -1,0 +1,30 @@
+<%- include('header') -%>
+<div
+  class="rounded bg-info my-4"
+  style="
+    height: 5rem;
+    text-align: center;
+    padding-top: -1rem;
+    font-size: 3rem;
+    font-weight: 700;
+  "
+>
+  Players List  🚩
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <ul class="list-group">
+        <% let len =players.length;
+         for(var i=0;i<len;i++) { %>
+         <li
+          class="list-group-item text-center btn-light"
+          style="color: white; background-color: rgb(12, 2, 2)" >
+        <a href="<%= players[i].link %>" style="text-decoration: none;"> <b><%=players[i].name%></b></a>
+        </li>
+        <% } %>
+      </ul>
+    </div>
+  </div>
+</div>
+<%- include('footer') -%>

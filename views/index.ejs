@@ -1,0 +1,49 @@
+<%- include('header') -%>
+
+<!-- body section -->
+<div
+  class="rounded bg-info my-4"
+  style="
+    height: 5rem;
+    text-align: center;
+    padding-top: -1rem;
+    font-size: 3rem;
+    font-weight: 700;
+  "
+  id="players"
+>
+  Players Complete Info 🚩
+</div>
+<div class="container-fluid">
+  <div class="row" style="justify-content: center">
+    <% for(players of players) {%>
+
+    <div class="card border border-danger m-3 col-md-3" style="width: 20rem">
+      <img src="<%= players.image %>" class="card-img-top rounded" alt="..." />
+      <div class="card-body">
+        <h5 class="card-title"><%= players.name %></h5>
+      </div>
+
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">Nationality: <%=players.Nationality %></li>
+        <li class="list-group-item">position : <%=players.position %></li>
+        <li class="list-group-item">jersey number : <%=players.jerseynum %></li>
+        <li class="list-group-item">Appearances : <%=players.Appearances %></li>
+        <% if(players.Cleansheets){ %>
+        <li class="list-group-item">
+          Clean sheets : <%=players.Cleansheets %>
+        </li>
+        <% } %> <% if(players.Goals){ %>
+        <li class="list-group-item">Goals : <%=players.Goals %></li>
+        <% } %> <% if(players.Assists){ %>
+        <li class="list-group-item">Assists : <%=players.Assists %></li>
+        <% } %>
+      </ul>
+      <div class="card-body">
+        <a href="<%=players.link %>" class="card-link">visit player</a>
+      </div>
+    </div>
+    <% } %>
+  </div>
+</div>
+<%- include('footer') -%>

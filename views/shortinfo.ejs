@@ -1,0 +1,43 @@
+<%- include('header') -%>
+
+<h1
+  class="text-center pt-3 mol"
+  style="
+    color: rgb(0, 0, 0);
+    text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff, 1px 1px #fff,
+      -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
+  "
+>
+  <b>Team Players Details 🚩</b>
+</h1>
+<div class="container mt-5">
+  <div class="row">
+    <div class="col">
+      <table
+        class="table"
+        style="background-color: rgb(12, 2, 2); color: rgb(255, 255, 255)"
+      >
+        <thead>
+          <tr>
+            <th scope="col"><b>J.No</b></th>
+            <th scope="col"><b>Name</b></th>
+            <th scope="col"><b>Nationality</b></th>
+            <th scope="col"><b>Position</b></th>
+          </tr>
+        </thead>
+
+        <% for(players of players) {%>
+        <tbody>
+          <tr>
+            <th scope="row"><%= players.jerseynum %></th>
+            <td><%= players.name %></td>
+            <td><%= players.Nationality %></td>
+            <td><%= players.position %></td>
+          </tr>
+        </tbody>
+        <% } %>
+      </table>
+    </div>
+  </div>
+</div>
+<%- include('footer') -%>
